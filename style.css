@@ -1,0 +1,265 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 320px;
+    background: linear-gradient(135deg, #0077B5, #00A0DC);
+    color: #fff;
+    border-radius: 0;
+}
+
+.container {
+    padding: 20px;
+    min-height: 400px;
+}
+
+h1 {
+    font-size: 22px;
+    margin: 0 0 20px 0;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #0077B5;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button.secondary {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+button::before {
+    content: '👍';
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+button.secondary::before {
+    content: '⏸️';
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.stat-label {
+    font-size: 11px;
+    margin: 0 0 5px 0;
+    opacity: 0.9;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stat-value.small {
+    font-size: 18px;
+}
+
+.status {
+    font-size: 13px;
+    text-align: center;
+    margin: 15px 0;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+}
+
+.status.active {
+    background: rgba(76, 175, 80, 0.3);
+}
+
+.status.paused {
+    background: rgba(255, 193, 7, 0.3);
+}
+
+.status.error {
+    background: rgba(244, 67, 54, 0.3);
+    color: #ffcdd2;
+}
+
+.settings-btn {
+    width: 100%;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.settings-btn::before {
+    content: '';
+    margin: 0;
+}
+
+.settings-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Painel de Configurações */
+#settingsPanel {
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 14px;
+    width: auto;
+    flex: 0;
+}
+
+.back-btn::before {
+    content: '';
+    margin: 0;
+}
+
+.settings-content {
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.settings-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.settings-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.settings-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.setting-item {
+    margin-bottom: 18px;
+}
+
+.setting-item label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 6px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+}
+
+.setting-item input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #0077B5;
+    font-size: 14px;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+.setting-item.checkbox label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-transform: none;
+    font-size: 13px;
+}
+
+.setting-item input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.save-btn {
+    width: 100%;
+    background: #fff;
+    color: #0077B5;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.save-btn::before {
+    content: '💾';
+    margin-right: 8px;
+}

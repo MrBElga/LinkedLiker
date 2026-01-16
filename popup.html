@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedLiker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Painel Principal -->
+        <div id="mainPanel">
+            <!-- Título -->
+            <h1>LinkedLiker</h1>
+            
+            <!-- Botões de controle -->
+            <div class="button-group">
+                <button id="toggleButton">Ligar</button>
+                <button id="pauseButton" class="secondary" style="display: none;">Pausar</button>
+            </div>
+            
+            <!-- Estatísticas -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <p class="stat-label">Sessão</p>
+                    <p class="stat-value" id="likeCount">0</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-label">Hoje</p>
+                    <p class="stat-value" id="dailyLikes">0/200</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-label">Tempo</p>
+                    <p class="stat-value small" id="sessionTime">00:00</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-label">Curtidas/h</p>
+                    <p class="stat-value small" id="likesPerHour">0</p>
+                </div>
+            </div>
+            
+            <!-- Status -->
+            <p class="status" id="status">Desativado</p>
+            
+            <!-- Botão de configurações -->
+            <button id="settingsButton" class="settings-btn">⚙️ Configurações</button>
+        </div>
+        
+        <!-- Painel de Configurações -->
+        <div id="settingsPanel" style="display: none;">
+            <div class="settings-header">
+                <button id="backButton" class="back-btn">← Voltar</button>
+                <h2>Configurações</h2>
+            </div>
+            
+            <div class="settings-content">
+                <div class="setting-item">
+                    <label for="minDelay">Delay Mínimo (ms)</label>
+                    <input type="number" id="minDelay" min="1000" max="10000" step="100" value="3000">
+                </div>
+                
+                <div class="setting-item">
+                    <label for="maxDelay">Delay Máximo (ms)</label>
+                    <input type="number" id="maxDelay" min="2000" max="20000" step="100" value="8000">
+                </div>
+                
+                <div class="setting-item">
+                    <label for="maxLikesPerCycle">Likes por Ciclo</label>
+                    <input type="number" id="maxLikesPerCycle" min="5" max="50" step="5" value="30">
+                </div>
+                
+                <div class="setting-item">
+                    <label for="maxLikesPerDay">Limite Diário</label>
+                    <input type="number" id="maxLikesPerDay" min="50" max="500" step="10" value="200">
+                </div>
+                
+                <div class="setting-item">
+                    <label for="scrollSpeed">Velocidade de Rolagem (px)</label>
+                    <input type="number" id="scrollSpeed" min="500" max="3000" step="100" value="1500">
+                </div>
+                
+                <div class="setting-item checkbox">
+                    <label>
+                        <input type="checkbox" id="enableRandomDelays" checked>
+                        Delays Aleatórios (Anti-detecção)
+                    </label>
+                </div>
+                
+                <button id="saveSettings" class="save-btn">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
